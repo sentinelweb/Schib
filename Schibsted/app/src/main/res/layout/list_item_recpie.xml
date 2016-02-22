@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="recipe"
+            type="uk.co.sentinelweb.schibsted.model.Recipe"/>
+
+        <variable
+            name="handlers"
+            type="uk.co.sentinelweb.schibsted.android.adapter.RecipeItemAdapter.RecipeItemViewHolder"/>
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/list_item_height"
+        android:background="@android:drawable/list_selector_background"
+        android:onClick="@{handlers.onClick}"
+        >
+        <ImageView
+            android:id="@+id/recipe_img"
+            android:layout_width="@dimen/list_item_height"
+            android:layout_height="@dimen/list_item_height"
+            android:scaleType="centerCrop"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_toRightOf="@+id/recipe_img"
+            android:gravity="center_vertical"
+            android:text="@{recipe.title}"
+            android:textAppearance="?android:attr/textAppearanceLarge"/>
+
+    </RelativeLayout>
+</layout>

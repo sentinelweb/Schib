@@ -10,21 +10,33 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="uk.co.sentinelweb.schibsted.ListActivity"
+    tools:context=".android.ListActivity"
     tools:showIn="@layout/activity_list">
 
     <EditText
         android:id="@+id/search_edit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:hint="@string/hint_search"
         android:text=""
-        android:hint=""
+        android:inputType="text"
+        android:imeOptions="actionDone"
+        android:singleLine="true"
+        />
+
+    <ProgressBar
+        android:id="@+id/recipe_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"
         />
 
     <android.support.v7.widget.RecyclerView
-        android:layout_below="@+id/search_edit"
+        android:id="@+id/recipe_list"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/search_edit">
 
     </android.support.v7.widget.RecyclerView>
 </RelativeLayout>
